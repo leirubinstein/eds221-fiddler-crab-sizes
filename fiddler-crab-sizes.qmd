@@ -18,3 +18,15 @@ pie_crab <- pie_crab
 skimr::skim(pie_crab)
 ```
 
+
+```{r}
+library(tidyverse)
+
+ggplot(data = pie_crab, aes(x = latitude, y = size)) +
+         geom_point()
+
+
+
+
+```
+
