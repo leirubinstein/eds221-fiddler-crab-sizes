@@ -1,0 +1,20 @@
+---
+title: "Fiddler Crabs"
+author: "Leilanie Rubinstein"
+format: html
+execute: 
+  warning: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+install.packages("lterdatasampler")
+library(lterdatasampler)
+```
+
+```{r}
+pie_crab <- pie_crab
+skimr::skim(pie_crab)
+```
+
