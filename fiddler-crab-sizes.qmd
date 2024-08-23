@@ -11,17 +11,9 @@ editor_options:
 
 ```{r}
 library(lterdatasampler)
+library(kableExtra)
+library(tidyverse)
 ```
-
-```{r}
-pie_crab <- pie_crab
-pie_crab_summary <- pie_crab %>%
-  dplyr::group_by(site) %>%
-  dplyr::summarise(mean = round(mean(size), 2),
-                   sd = round(sd(size), 2),
-                   count = n())
-```
-
 
 ```{r}
 library(tidyverse)
@@ -29,10 +21,18 @@ library(tidyverse)
 ggplot(data = pie_crab, aes(x = latitude, y = size)) +
   geom_point() +
   labs(caption = "this is my caption")
-
 ```
 
+
+
 ```{r}
+pie_crab_summary <- pie_crab %>%
+  dplyr::group_by(site) %>%
+  dplyr::summarise(mean = round(mean(size), 2),
+                   sd = round(sd(size), 2),
+                   count = n()) %>%
+  kable(col.names = c("site", "mean size (mm)", "standard deviation (mm)", "count"))
+pie_crab_summary
 
 ```
 
