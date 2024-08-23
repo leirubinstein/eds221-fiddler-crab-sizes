@@ -15,6 +15,11 @@ library(lterdatasampler)
 
 ```{r}
 pie_crab <- pie_crab
+pie_crab_summary <- pie_crab %>%
+  dplyr::group_by(site) %>%
+  dplyr::summarise(mean = round(mean(size), 2),
+                   sd = round(sd(size), 2),
+                   count = n())
 ```
 
 
